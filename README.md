@@ -95,3 +95,64 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-hello-world)
 
 <!-- AUTO-GENERATED-CONTENT:END -->
+
+## Adding gatsby-source-filesystem (plugin)
+
+Gives graphQL an addition 2 new queries
+
+1. file()
+2. allFile())
+
+```bash
+npm install --save gatsby-source-filesystem
+```
+
+Adding file path for query
+
+```javascript
+   {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/posts/`,
+      },
+    },
+```
+
+Playground DOCS view: allFile() => edges => node
+gatsby.config
+
+graphQL list all posts
+
+```
+
+query {
+  allFile{
+      edges{
+        node{
+          name
+          extension
+          dir
+        }
+      }
+  }
+}
+
+```
+
+### Parser for MD files
+
+```
+npm install --save gatsby-transformer-remark
+```
+
+Gives graphQL an addition 2 new queries
+
+1. markdownRemark() - fetch individual post
+2. allMarkdownRemark() fetching list of posts
+
+Adding images
+
+```
+npm install --save gatsby-remark-images gatsby-plugin-sharp
+```
