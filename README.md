@@ -194,3 +194,11 @@ add import to component
 ```javascript
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 ```
+
+## SEO
+
+SSR data added to components, e.g. title, meta attributes, etc.
+
+```
+npm install --save gatsby-plugin-react-helmet react-helmet
+```
