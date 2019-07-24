@@ -156,3 +156,41 @@ Adding images
 ```
 npm install --save gatsby-remark-images gatsby-plugin-sharp
 ```
+
+## Contentful CMS
+
+graphQL query
+
+```
+query {
+  allContentfulBlogPost (
+    sort:{
+      fields: publishedDate,
+      order: DESC
+    }
+  ) {
+    edges {
+      node {
+        title
+        slug
+        publishedDate(formatString: "MMMM Do, YYYY")
+        body {
+          json
+        }
+      }
+    }
+  }
+}
+```
+
+Parse the json from contentful
+
+```
+npm i @contentful/rich-text-react-renderer
+```
+
+add import to component
+
+```javascript
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+```

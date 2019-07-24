@@ -41,13 +41,22 @@ const Header = () => {
               About
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link
               className={headerStyles.navItem}
               activeClassName={headerStyles.activeNavItem}
               to="/blog"
             >
               Blog
+            </Link>
+          </li> */}
+          <li>
+            <Link
+              className={headerStyles.navItem}
+              activeClassName={headerStyles.activeNavItem}
+              to="/contentful-blog"
+            >
+              Contenful
             </Link>
           </li>
           <li>
